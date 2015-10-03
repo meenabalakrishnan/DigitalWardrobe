@@ -1,0 +1,38 @@
+<ion-view title="Activity tracker" ng-init="initCheckin()">
+<ion-nav-bar id="navBar" class="bar-energized">
+  <div class="buttons right-buttons">
+  <a class="button button-icon icon-right ion-arrow-left-c" href="#/tab/home"></a>
+  </div>
+</ion-nav-bar>
+<ion-pane>
+<ion-content>
+<div class="list card">
+
+  <a href="#/workout" class="item item-icon-left">
+    <i class="icon ion-android-stopwatch"></i>
+    Record activity
+  </a>
+
+  <button ng-click="checkin()" class="item item-icon-left" style="width: 100%; text-align: left;">
+    <i class="icon ion-android-checkmark"></i>
+    Check in
+  </button>
+
+  <a href="#/workoutstatistics" class="item item-icon-left">
+    <i class="icon ion-podium"></i>
+    Statistics
+  </a>
+</div>
+
+<div class="list card">
+  <div class="item item-divider">
+    7 days activity
+  </div>
+  <div class="item item-text-wrap">
+    You checked in {{gymcount}} times in the past week.
+  </div>
+</div>
+
+</ion-content>
+</ion-pane>
+</ion-view>

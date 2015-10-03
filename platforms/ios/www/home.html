@@ -1,0 +1,39 @@
+<ion-view title="Digital Stylist" ng-init="initTimeOfDay()">
+<ion-nav-bar id="navBar" class="bar-calm">
+  <div class="buttons right-buttons">
+  <a class="button button-icon icon-right ion-arrow-left-c" href="#/tab/home"></a>
+  </div>
+</ion-nav-bar>
+<ion-pane>
+<ion-content>
+<div class="list card">
+
+<div class="item item-divider">
+    It's {{dayOfWeek}} {{dayMoment}}. How about ...
+  </div>
+  <ion-list>
+  		<a href="#/{{activity.url}}" class="item item-icon-left" ng-repeat="activity in suggestedActivities">
+  			<i class="icon + {{activity.icon}}"></i>
+  			{{activity.title}}
+  		</a>
+  	</ion-list>
+	<!-- <a href="#/restaurant" class="item item-icon-left">
+		<i class="icon ion-pizza"></i>
+		Eating out
+	</a>
+
+	<a href="#/party" class="item item-icon-left">
+		<i class="icon ion-beer"></i>
+		Meeting some friends
+	</a>
+
+	<a href="#/gym" class="item item-icon-left">
+		<i class="icon ion-ios7-basketball"></i>
+		Going to the gym
+	</a> -->
+
+</div>
+<div class="list card">
+</ion-content>
+</ion-pane>
+</ion-view>

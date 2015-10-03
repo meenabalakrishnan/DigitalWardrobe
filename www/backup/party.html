@@ -1,0 +1,88 @@
+<ion-view title="Let's decide when and where ....">
+<ion-nav-bar id="navBar" class="bar-dark">
+  <div class="buttons right-buttons">
+  <a class="button button-icon icon-right ion-arrow-left-c" href="#/tab/home"></a>
+  </div>
+</ion-nav-bar>
+  <ion-pane>
+    
+    <ion-header-bar class="bar-stable">
+      <i class="icon ion-beer"></i>
+      <h1 class="title">Why not invite some more friends ...</h1>
+    </ion-header-bar>
+
+    <ion-content ng-controller="partyListCtrl">
+
+        <script id="templates/contacts.html" type="text/ng-template">
+          <ion-modal-view>
+            <ion-header-bar class="bar bar-header bar-positive">
+              <h1 class="title">Contacts</h1>
+              <button class="button button-clear button-primary" ng-click="contactsModal.hide()">Cancel</button>
+            </ion-header-bar>
+
+            <ion-content class="padding">
+              <div class="list">
+                <ion-checkbox ng-repeat="item in friendsList"
+                              ng-model="item.selected" 
+                              ng-checked="item.selected">
+                  {{ item.displayName }} ({{ item.phoneNumbers[0].value }})
+                </ion-checkbox>        
+              </div>
+            </ion-content>
+              <div class="bar bar-footer bar-positive" ng-click="SendMessage()">
+                <h1 class="title">Send</h1>
+              </div>
+          </ion-modal-view>
+        </script>
+
+        <div class="list list-inset">
+          <label class="item item-input">
+            <i class="icon ion-clock"></i>
+            <input type="time" ng-model="activityTime" style="padding-left: 20px">
+          </label>
+        </div>
+        
+        <div class="list list-inset">
+          <textarea ng-model="newMessage" type="text"
+                    placeholder="See you guys soon... " rows="3"
+                    style="border: 1px solid #999999; padding-left: 10px; padding-top:10px; resize: none">
+          </textarea>
+        </div>
+        
+        <div class="list list-inset" style="padding-right:1px; padding-left: 1px;">
+          <div class="row">
+            <a href="#/places" class="item item-icon-left">
+              <i class="icon ion-location"></i>
+            </a>
+            <label class="row item item-input">
+              {{partyAddress}}
+            </label>
+          </div>
+        </div>
+
+        <div class="list list-inset" style="padding-right:1px; padding-left: 1px;">
+          <div class="row">
+            <a class="item item-icon-left" ng-click="addPicture()">
+              <i class="icon ion-camera"></i>
+            </a>
+            <label class="row item item-input">
+              Add some photos
+            </label>
+          </div>
+          
+          <div id="photos" class="clearfix">
+            <div class="photo item img-wrap" ng-repeat="photo in photos" style="max-width: 200px; max-height: 200px; float: left; margin:10px; padding: 5px;">
+              <span class="close" ng-click="deletePicture($event)">&times;</span>
+              <img ng-src="{{ photo }}" style="max-width: 100%; max-height: 100%; float: left">
+            </div>
+          </div>
+        </div>
+    </ion-content>
+        
+    <ion-footer-bar align-title="center" class="bar-stable" ng-controller="partyListCtrl">
+      <h1 class="title"  ng-click="pickContacts()">
+        <div class="icon ion-android-friends"> Send</div>
+      </h1>
+    </ion-footer-bar>
+  </ion-pane>
+</ion-view>

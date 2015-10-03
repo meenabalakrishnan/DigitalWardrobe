@@ -1,0 +1,41 @@
+<ion-view title="Let's be more specific ..." ng-init="init()">
+<ion-nav-bar id="navBar" class="bar-dark">
+  <div class="buttons right-buttons">
+  <a class="button button-icon icon-right ion-arrow-left-c" href="#/tab/home"></a>
+  </div>
+</ion-nav-bar>
+  <ion-pane>
+    
+    <ion-header-bar class="bar-stable">
+      <i class="icon ion-beer"></i>
+      <h1 class="title">Surely, some of you need directions ...</h1>
+    </ion-header-bar>
+
+    
+    <ion-content ng-controller="PlacesController"> 
+
+      <div class="row">
+        <div class="list list-inset col">
+          <label class="item item-input">
+            <i class="icon ion-location"></i>
+            <input type="text" placeHolder="Search something like Starbucks"
+                   style="padding-left: 20px"
+                   ng-model="placeQuery" ng-change="searchForPlace()">
+          </label>
+        </div>
+      </div>
+
+        <div class="col">
+          <ion-list   class="list-full">
+            <ion-item ng-repeat="item in placeSearchResults" ng-click="setPartyAddress(item)">
+              <i class='icon ion-beer'></i>
+              {{ item.name }}, {{item.formatted_address}}
+            </ion-item>
+          </ion-list>
+        </div>
+      
+        <div id="map" class="col" data-tap-disabled="true"></div>
+
+    </ion-content>
+  </ion-pane>
+</ion-view>

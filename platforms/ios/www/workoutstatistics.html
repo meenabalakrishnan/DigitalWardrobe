@@ -1,0 +1,45 @@
+<ion-view title="Workout Statistics" ng-init="initStatistics()">
+<ion-nav-bar id="navBar" class="bar-dark">
+  <div class="buttons right-buttons">
+  <a class="button button-icon icon-right ion-arrow-left-c" href="#/tab/home"></a>
+  </div>
+</ion-nav-bar>
+<ion-pane>
+<ion-content>
+
+<div class="list card">
+<a class="item item-icon-left" href="#">
+    <i class="icon ion-stats-bars"></i>
+    Steps per activity
+  </a>
+
+  <div class="item item-image">
+    <div id="chart_div"></div>
+  </div>
+</div>
+
+<div class="list card">
+<a class="item item-icon-left" href="#">
+    <i class="icon ion-stats-bars"></i>
+    Activity day of the week
+  </a>
+
+  <div class="item item-image">
+    <div id="chart_div_3"></div>
+  </div>
+</div>
+
+<div class="list card">
+<a class="item item-icon-left" href="#">
+    <i class="icon ion-stats-bars"></i>
+    Steps per activity minute (average)
+  </a>
+
+  <div class="item item-image">
+    <div id="chart_div_2"></div>
+  </div>
+</div>
+
+</ion-content>
+</ion-pane>
+</ion-view>

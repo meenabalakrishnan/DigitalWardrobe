@@ -1,0 +1,33 @@
+<ion-view title="Activity recorder">
+<ion-nav-bar id="navBar" class="bar-dark">
+  <div class="buttons right-buttons">
+  <a class="button button-icon icon-right ion-arrow-left-c" href="#/tab/home"></a>
+  </div>
+</ion-nav-bar>
+<ion-pane>
+<ion-content >
+<div class="workout-heading">
+	<div class="card">
+		<h1 id="workout-step-counter">{{workoutSteps}}</h1>
+		<h4>steps</h4>
+	</div>
+
+	<div class="card">
+		<h1 id="workout-timer">{{workoutMinutes}}:{{workoutSeconds}}</h1>
+		<h4>elapsed time</h4>
+	</div>
+
+	<div class="card">
+		<h1 id="workout-speedometer">{{workoutSpeed}}</h1>
+		<h4>current pace (steps per minute)</h4>
+	</div>
+</div>
+</ion-content>
+<div class="bar bar-footer">
+	<div class="title">
+		<button ng-click="startWorkout()" class="button button-balanced">Start activity</button>
+		<button ng-click="endWorkout()" class="button button-assertive">End activity</button>
+	</div>
+</div>
+</ion-pane>
+</ion-view>

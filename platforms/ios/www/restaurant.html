@@ -1,0 +1,20 @@
+<ion-view title="Let's find a place to eat">
+<ion-nav-bar id="navBar" class="bar-dark">
+  <div class="buttons right-buttons">
+  <a class="button button-icon icon-right ion-arrow-left-c" href="#/tab/home"></a>
+  </div>
+</ion-nav-bar>
+	<ion-pane>
+		<ion-content>
+			<div class="col">
+         		<ion-list class="list-full">
+            		<ion-item ng-repeat="item in model.businesses">
+              			<i class='icon ion-beer'></i>
+              			{{ item.name }}
+              			<h5>{{ item.location.address[0] }}</h5>
+            		</ion-item>
+          		</ion-list>
+        	</div>
+		</ion-content>
+	</ion-pane>
+</ion-view>
